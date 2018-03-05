@@ -1,3 +1,4 @@
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
@@ -12,25 +13,31 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.*;
 import static org.openqa.selenium.OutputType.*;
 
-public class FFOpenTest {
+public class LoginValidUserTest {
     FirefoxDriver wd;
     
     @BeforeMethod
     public void setUp() throws Exception {
-        wd = new FirefoxDriver();
+        wd = new FirefoxDriver(new FirefoxOptions().setLegacy(true));
         wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
     }
     
     @Test
-    public void testOpenFF() {
-        wd.get("https://www.google.co.il/?gfe_rd=cr&dcr=0&ei=e4GcWpfPM6nb8Ae0-7TYBg&gws_rd=ssl");
-        wd.findElement(By.id("lst-ib")).click();
-        wd.findElement(By.id("lst-ib")).clear();
-        wd.findElement(By.id("lst-ib")).sendKeys("selenium webdriver");
-        wd.findElement(By.id("lst-ib")).click();
-        wd.findElement(By.id("lst-ib")).clear();
-        wd.findElement(By.id("lst-ib")).sendKeys("selenium webdriver");
-        wd.findElement(By.linkText("Selenium WebDriver")).click();
+    public void validUserLoginTest() {
+        wd.get("https://trello.com/");
+        wd.findElement(By.linkText("Log In")).click();
+        wd.findElement(By.id("password")).click();
+        wd.findElement(By.id("password")).sendKeys("\\undefined");
+        wd.findElement(By.id("user")).click();
+        wd.findElement(By.id("user")).clear();
+        wd.findElement(By.id("user")).sendKeys("elena.telran@yahoo.com");
+        wd.findElement(By.id("password")).click();
+        wd.findElement(By.id("password")).clear();
+        wd.findElement(By.id("password")).sendKeys("2e3r4t5y");
+        wd.findElement(By.id("password")).click();
+        wd.findElement(By.id("password")).clear();
+        wd.findElement(By.id("password")).sendKeys("12345.com");
+        wd.findElement(By.id("login")).click();
     }
     
     @AfterMethod
