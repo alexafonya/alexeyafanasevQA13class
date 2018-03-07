@@ -19,7 +19,7 @@ public class LoginValidUserTest {
     
     @Test
     public void validUserLoginTest() {
-        openSite();
+        openSite("https://trello.com/");
         clickLogInButton();
         openUserName("elena.telran@yahoo.com");
         enterPassword("12345.com");
@@ -28,7 +28,7 @@ public class LoginValidUserTest {
 
     @Test
     public void validUserLoginTestNotValid() {
-        openSite();
+        openSite("https://trello.com/");
         clickLogInButton();
         openUserName("1");
         enterPassword("12345.com");
@@ -37,7 +37,7 @@ public class LoginValidUserTest {
 
     @Test
     public void validUserLoginTestEmptyFilds() {
-        openSite();
+        openSite("https://trello.com/");
         clickLogInButton();
         openUserName("");
         enterPassword("");
@@ -64,8 +64,8 @@ public class LoginValidUserTest {
         wd.findElement(By.linkText("Log In")).click();
     }
 
-    private void openSite() {
-        wd.get("https://trello.com/");
+    private void openSite(String url) {
+        wd.get(url);
     }
 
     @AfterMethod
