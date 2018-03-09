@@ -9,6 +9,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import java.util.concurrent.TimeUnit;
 
 public class ApplicationManagar {
+    private GroupHelper groupHelper;
     FirefoxDriver wd;
 
     public static boolean isAlertPresent(FirefoxDriver wd) {
@@ -27,32 +28,9 @@ public class ApplicationManagar {
     public void start() {
         wd = new FirefoxDriver(new FirefoxOptions().setLegacy(true));
         wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+        groupHelper = new GroupHelper(wd);
         openSite();
         logIn("admin", "secret");
-    }
-
-    public void returnToGroupsPage() {
-        wd.findElement(By.linkText("group page")).click();
-    }
-
-    public void submitGroupCreation() {
-        wd.findElement(By.name("submit")).click();
-    }
-
-    public void fillGroupForm(GroupData groupData) {
-        wd.findElement(By.name("group_name")).click();
-        wd.findElement(By.name("group_name")).clear();
-        wd.findElement(By.name("group_name")).sendKeys(groupData.getGroupName());
-        wd.findElement(By.name("group_header")).click();
-        wd.findElement(By.name("group_header")).clear();
-        wd.findElement(By.name("group_header")).sendKeys(groupData.getGroupHeader());
-        wd.findElement(By.name("group_footer")).click();
-        wd.findElement(By.name("group_footer")).clear();
-        wd.findElement(By.name("group_footer")).sendKeys(groupData.getGroupFooter());
-    }
-
-    public void initGroupCreation() {
-        wd.findElement(By.name("new")).click();
     }
 
     public void goToGroupsPage() {
@@ -74,26 +52,7 @@ public class ApplicationManagar {
         wd.get("http://localhost/addressbook/");
     }
 
-    public void selectGroup() {
-
-        wd.findElement(By.name("selected[]")).click();
-    }
-
-    public void initGroupDeletion() {
-        wd.findElement(By.name("delete")).click();
-    }
-
-    public void initGroupModification() {
-        wd.findElement(By.name("edit")).click();
-    }
-
-    public void submitGroupModification() {
-        wd.findElement(By.name("update")).click();
-    }
-
-
-    public int getGroupCount() {
-
-        return wd.findElements(By.name("selected[]")).size();
+    public GroupHelper getGroupHelper() {
+        return groupHelper;
     }
 }

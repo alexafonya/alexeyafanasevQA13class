@@ -9,15 +9,15 @@ public class GroupCreationTest extends TestBase {
     @Test
     public void groupCreationTest() {
         app.goToGroupsPage();
-        int before = app.getGroupCount();
-        app.initGroupCreation();
-        app.fillGroupForm(new GroupData()
+        int before = app.getGroupHelper().getGroupCount();
+        app.getGroupHelper().initGroupCreation();
+        app.getGroupHelper().fillGroupForm(new GroupData()
                 .withGroupName("test3")
                 //.withGroupHeader("test3Header")
                 .withGroupFooter("test3Footer"));
-        app.submitGroupCreation();
-        app.returnToGroupsPage();
-        int after = app.getGroupCount();
+        app.getGroupHelper().submitGroupCreation();
+        app.getGroupHelper().returnToGroupsPage();
+        int after = app.getGroupHelper().getGroupCount();
         Assert.assertEquals(after, before+1);
 
     }
