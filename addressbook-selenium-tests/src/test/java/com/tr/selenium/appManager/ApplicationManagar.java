@@ -82,4 +82,18 @@ public class ApplicationManagar {
     public void initGroupDeletion() {
         wd.findElement(By.name("delete")).click();
     }
+
+    public void initGroupModification() {
+        wd.findElement(By.name("edit")).click();
+    }
+
+    public void submitGroupModification() {
+        wd.findElement(By.name("update")).click();
+    }
+
+
+    public int getGroupCount() {
+
+        return wd.findElements(By.name("selected[]")).size();
+    }
 }
