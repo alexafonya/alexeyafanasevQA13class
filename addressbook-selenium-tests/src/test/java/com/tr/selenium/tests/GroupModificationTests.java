@@ -1,6 +1,6 @@
 package com.tr.selenium.tests;
 
-import com.tr.selenium.modul.GroupData;
+import com.tr.selenium.model.GroupData;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

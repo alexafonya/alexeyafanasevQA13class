@@ -1,4 +1,4 @@
-package com.tr.selenium.modul;
+package com.tr.selenium.model;
 
 public class GroupData {
     private String groupName;

@@ -1,6 +1,6 @@
 package com.tr.selenium.appManager;
 
-import com.tr.selenium.modul.GroupData;
+import com.tr.selenium.model.GroupData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
