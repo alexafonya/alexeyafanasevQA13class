@@ -12,9 +12,9 @@ public class ContactHelper extends HelperBase{
 
 
         public void fillContactForm(ContactData contactData1) {
-            type(By.name("group_name"), contactData1.getFirstName());
-            type(By.name("group_header"), contactData1.getLastName());
-            type(By.name("group_footer"), contactData1.getAddress());
+            type(By.name("firstname"), contactData1.getFirstName());
+            type(By.name("lastname"), contactData1.getLastName());
+            type(By.name("address"), contactData1.getAddress());
         }
 
     public void submitContactCreation() {

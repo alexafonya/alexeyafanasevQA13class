@@ -14,3 +14,14 @@ dependencies {
     compile 'org.seleniumhq.selenium:selenium-java:3.10.0'
     compile 'org.testng:testng:6.14.2'
 }
+task testGroups(type:Test){
+    useTestNG{
+        suites 'crs/tests/resources/testng-groups.xml'
+    }
+}
+
+task testContacts(type:Test){
+    useTestNG{
+        suites 'crs/tests/resources/testng-contacts.xml'
+    }
+}
