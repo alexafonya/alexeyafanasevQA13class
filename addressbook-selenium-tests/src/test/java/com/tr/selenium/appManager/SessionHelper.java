@@ -1,14 +1,13 @@
 package com.tr.selenium.appManager;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class SessionHelper extends HelperBase{
-    private FirefoxDriver wd;
 
-    public SessionHelper(FirefoxDriver wd) {
+    public SessionHelper(WebDriver wd) {
         super(wd);
-        this.wd = wd;
     }
 
     public void logIn(String user, String pwd) {

@@ -6,9 +6,12 @@ import org.testng.annotations.Test;
 public class GroupDeletionTest extends TestBase{
 
     @Test
-
     public void deletionGroupTest(){
-        app.goToGroupsPage();
+        app.getNavigationHelper().goToGroupsPage();
+        if(! app.getGroupHelper().isGroupExist()){
+          app.getGroupHelper().createGroup();
+        }
+
         int before = app.getGroupHelper().getGroupCount();
         app.getGroupHelper().selectGroup();
         app.getGroupHelper().initGroupDeletion();
