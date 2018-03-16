@@ -6,6 +6,8 @@
       <module name="addressbook-selenium-tests_test" target="1.8" />
       <module name="firsSelenium_main" target="1.8" />
       <module name="firsSelenium_test" target="1.8" />
+      <module name="RadioTests_main" target="1.8" />
+      <module name="RadioTests_test" target="1.8" />
       <module name="trelloSeleniumProject_main" target="1.8" />
       <module name="trelloSeleniumProject_test" target="1.8" />
       <module name="TrelloTests_main" target="1.8" />
