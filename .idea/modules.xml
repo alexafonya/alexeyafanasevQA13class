@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MaxdoneHomeTesting.iml" filepath="$PROJECT_DIR$/.idea/modules/MaxdoneHomeTesting.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MaxdoneHomeTesting_main.iml" filepath="$PROJECT_DIR$/.idea/modules/MaxdoneHomeTesting_main.iml" group="MaxdoneHomeTesting" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MaxdoneHomeTesting_test.iml" filepath="$PROJECT_DIR$/.idea/modules/MaxdoneHomeTesting_test.iml" group="MaxdoneHomeTesting" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MaxdoneTest.iml" filepath="$PROJECT_DIR$/.idea/modules/MaxdoneTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/RadioTests.iml" filepath="$PROJECT_DIR$/.idea/modules/RadioTests.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/RadioTests_main.iml" filepath="$PROJECT_DIR$/.idea/modules/RadioTests_main.iml" group="RadioTests" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/RadioTests_test.iml" filepath="$PROJECT_DIR$/.idea/modules/RadioTests_test.iml" group="RadioTests" />
