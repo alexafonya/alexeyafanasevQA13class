@@ -84,7 +84,7 @@ public class ApplicationManager {
         click(By.cssSelector("li.goals"));
     }
 
-    public void goalButton() {
+    public void ButtonSetGoal() {
         click(By.id("createGoal"));
     }
 
@@ -98,5 +98,28 @@ public class ApplicationManager {
 
     public void closeGoal() {
         click(By.id("closeForm"));
+    }
+
+    public void fillTaskInGoal(String taskName){
+        if(wd.findElement(By.id("taskTab")).isSelected()){
+            click(By.id("taskTab"));
+            fillTaskForm(new Task(taskName));
+        }else {
+            fillTaskForm(new Task(taskName));
+        }
+    }
+
+    public void chooseGoal() {
+        click(By.cssSelector("img.goalImage.left"));
+    }
+
+    public void chooseTask() {
+        click(By.cssSelector("div.taskRowInfoBlock"));
+        }
+
+
+    public void renameTask() {
+            type(By.id("goalTaskPreviewTitle"),"The first meeting");
+            closeTask();
     }
 }
