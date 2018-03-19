@@ -3,6 +3,7 @@ package com.Home.Test.appManager;
 import com.Home.Test.modul.Goal;
 import com.Home.Test.modul.Task;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
@@ -110,10 +111,18 @@ public class ApplicationManager {
     }
 
     public void chooseGoal() {
-        click(By.cssSelector("img.goalImage.left"));
-    }
+            click(By.cssSelector("img.goalImage.left"));
+            click(By.id("todayHeader"));
+        }
 
     public void chooseTask() {
+        if(wd.findElement(By.id("todayContent")).getText().endsWith("is empty")){
+            goalTitle(new Goal("Next week's meeting"));
+            fillTaskForm(new Task("1"));
+            submitTaskCreation();
+            click(By.id("todayHeader"));
+        }
+        click(By.id("todayHeader"));
         click(By.cssSelector("div.taskRowInfoBlock"));
         }
 
@@ -122,4 +131,5 @@ public class ApplicationManager {
             type(By.id("goalTaskPreviewTitle"),"The first meeting");
             closeTask();
     }
+
 }
